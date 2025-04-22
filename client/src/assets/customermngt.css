@@ -1,0 +1,175 @@
+
+  table {
+    table-layout: auto;
+    width: 100vh;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+    word-wrap: break-word;
+  }
+
+  @media (max-width: 768px) {
+    /* Điều chỉnh bảng */
+    table {
+      width: 100%;
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  
+    /* Ẩn một số cột không quan trọng khi trên mobile */
+    th:nth-child(5),
+    td:nth-child(5),
+    th:nth-child(6),
+    td:nth-child(6),
+    th:nth-child(11),
+    td:nth-child(11),
+    th:nth-child(12),
+    td:nth-child(12) {
+      display: none;
+    }
+  
+    /* Canh chỉnh lại header */
+    .flex.justify-between.items-center {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    /* Nút thêm khách hàng */
+    .bg-green-500 {
+      width: 100%;
+      text-align: center;
+    }
+  
+    /* Chỉnh sửa phân trang */
+    .min-h-full.flex.justify-end {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+  
+/* ======= Search Box Styles ======= */
+.search-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+/* Mỗi nhóm label + input */
+.search-item {
+  display: flex;
+  flex-direction: column;
+  width: calc(33.333% - 10px); /* 3 cột trên desktop */
+  min-width: 200px;
+}
+
+/* Label */
+.search-item label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+/* Input và Select Fields */
+.search-item input,
+.search-item select {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f9fafb;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.2s;
+}
+
+.search-item input:focus,
+.search-item select:focus {
+  border-color: #007bff;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
+}
+
+/* Căn giữa các nút */
+.search-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.search-buttons button {
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Nút "Làm Mới" */
+.search-buttons .reset-btn {
+  background: #f44336;
+  color: white;
+}
+
+.search-buttons .reset-btn:hover {
+  background: #d32f2f;
+}
+
+/* Nút "Tìm Kiếm" */
+.search-buttons .search-btn {
+  background: #007bff;
+  color: white;
+}
+
+.search-buttons .search-btn:hover {
+  background: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .search-item {
+    width: calc(50% - 10px); /* 2 cột trên tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .search-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-item {
+    width: 100%;
+  }
+
+  .search-buttons {
+    flex-direction: row;
+  }
+
+  .search-buttons button {
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-buttons {
+    flex-direction: column;
+  }
+
+  .search-buttons button {
+    width: 100%;
+  }
+}

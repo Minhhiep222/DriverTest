@@ -1,0 +1,333 @@
+/* Container chính */
+.contener {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f7f9;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.booking-container {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    /* font-family: 'Roboto', Arial, sans-serif; */
+    font-family: 'Playfair Display', serif;
+
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    padding: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    position: relative;
+    line-height: 18px;
+}
+
+/* Tiêu đề */
+.booking-container h2 {
+    color: #003399;
+    font-size: 1.8rem;
+    margin-bottom: 0.6rem;
+}
+
+.booking-container h3 {
+    color: #555;
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+/* Bước chọn dịch vụ và ngày giờ */
+.step-container {
+    margin-top: 1.2rem;
+    text-align: left;
+}
+
+.step-container p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.6rem;
+    font-weight: bold;
+}
+
+/* Form */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+    position: relative;
+    /* For absolute positioning of required asterisk */
+}
+
+.form-group label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.form-group label .required {
+    color: #ff4500;
+    font-weight: bold;
+    margin-left: 0.2rem;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Dropdown và input ngày */
+select,
+input[type='date'],
+textarea,
+input[type='text'],
+input[type='tel'] {
+    width: 100%;
+    padding: 0.6rem;
+    margin: 0.3rem 0;
+    border: 1px solid #ddd;
+    border-radius: 0.4rem;
+    font-size: 0.9rem;
+    background: #fff;
+    box-shadow: inset 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+select:focus,
+input[type='date']:focus,
+textarea:focus,
+input[type='text']:focus,
+input[type='tel']:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0.3rem rgba(0, 123, 255, 0.5);
+}
+
+input[type='date'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Nút chọn giờ */
+.time-slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1.2rem 0;
+    justify-content: center;
+}
+
+.time-slots button {
+    padding: 0.75rem 1.2rem;
+    border: 2px solid #007bff;
+    background: #fff;
+    color: #007bff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 18px;
+}
+
+.time-slots button.selected {
+    background: #007bff;
+    color: #fff;
+    box-shadow: 0 0.25rem 0.4rem rgba(0, 123, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.time-slots button:hover {
+    background: #0056b3;
+    color: #fff;
+    border-color: #0056b3;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.time-slots button:disabled {
+    background: rgba(0, 0, 0, 0.1);
+    color: #fff;
+    border-color: rgba(0, 0, 0, 0.2);
+    cursor: no-drop;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+/* Popup overlay */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+/* Popup nội dung */
+.popup-content {
+    background: linear-gradient(145deg, #ffffff, #f9f9f9);
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    text-align: center;
+    box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-content h3 {
+    font-size: 1.25rem;
+    color: #003399;
+    margin-bottom: 0.9rem;
+}
+
+.popup-content span {
+    color: #ff4500;
+    font-weight: bold;
+}
+
+.popup-content p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1.25rem;
+}
+
+/* Input trong popup */
+.popup-content input {
+    width: 80%;
+    padding: 0.75rem;
+    margin: 0.6rem 0;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    background: #fefefe;
+    box-shadow: inset 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.popup-content input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0.3rem rgba(0, 123, 255, 0.5);
+}
+
+/* Nút trong popup */
+.popup-content button {
+    padding: 0.75rem 1.5rem;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.popup-content button:hover {
+    background: #0056b3;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+/* Nút chốt giờ */
+.btn-contener {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.2rem;
+}
+
+.btn-book {
+    padding: 0.75rem 1.5rem;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.btn-book:hover {
+    background: #218838;
+    box-shadow: 0 0.25rem 0.6rem rgba(40, 167, 69, 0.3);
+}
+
+.btn-book.active {
+    background: #218838;
+    transform: scale(1.05);
+    box-shadow: 0 0.25rem 0.8rem rgba(40, 167, 69, 0.5);
+}
+
+.btn-book:disabled {
+    background: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: scale(1);
+}
+
+/* Hiệu ứng fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive CSS */
+@media (max-width: 768px) {
+    .booking-container {
+        width: 90%;
+        padding: 1.2rem;
+    }
+
+    .time-slots button {
+        padding: 0.6rem 0.9rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .booking-container h2 {
+        font-size: 1.4rem;
+    }
+
+    .booking-container h3 {
+        font-size: 1rem;
+    }
+
+    .popup-content button {
+        padding: 0.6rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    .btn-book {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}

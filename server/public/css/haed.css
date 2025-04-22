@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #ffffff;
+    color: #0a0808;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Menu */
+.menu {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+.menu li {
+    margin: 10px 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #0a0808;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.menu a.active,
+.menu a:hover {
+    background-color: #98f89b;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.menu .nav-second-level {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.menu .nav-second-level li a {
+    font-size: 13px;
+    padding: 8px 15px;
+    color: #666666;
+}
+
+.menu .nav-second-level li a:hover {
+    color: #4CAF50;
+}
+
+/* Logout button */
+.logout {
+    margin-top: auto;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.logout:hover {
+    background-color: #c0392b;
+}
+
+/* Download button */
+.download {
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.download:hover {
+    background-color: #2980b9;
+}
+
+.download:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .menu a {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+
+    .logo img {
+        width: 70px;
+        height: 70px;
+    }
+}

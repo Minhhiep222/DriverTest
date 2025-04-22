@@ -1,0 +1,167 @@
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Tổng thể cho header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 15px 20px;
+    border-bottom: 2px solid #f0f0f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề */
+.header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.search-form {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: #fff;
+    max-width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 15px;
+}
+
+.search {
+    border: none;
+    padding: 10px 15px;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.search::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.btn-search {
+    height: 40px;
+    background-color: #4b9249;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-search:hover {
+    background-color: #3a7a3b;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.icon {
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.icon:hover {
+    color: #4b9249;
+}
+
+/* Nút thêm khách hàng */
+.add-btn {
+    background-color: #4b9249;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #3d7c3b;
+}
+
+.search {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-btn {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.table-section table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background: #FFEEF4;
+}
+
+table img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.status.active {
+    background: #4CAF50;
+}
+
+.status.inactive {
+    background: #e74c3c;
+}
+
+button.edit, button.delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}

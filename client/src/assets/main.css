@@ -1,0 +1,57 @@
+@import './base.css';
+
+body {
+  color: black;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+
+  /* font-family: Arial, sans-serif; */
+  /* width: max-content; */
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+.ant-select-selector {
+  height: 40px !important;
+}
+
+.ant-select-selection-item {
+  line-height: 40px !important;
+}
+
+.ant-input {
+  min-height: 40px;
+}
+
+.ant-select-selection-item {
+  min-height: 30px !important;
+}
+
+.img-failed {
+  width: 80% !important;
+  object-fit: contain !important;
+}
+
+.ant-image.css-dev-only-do-not-override-1p3hq3p {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.ant-select-selector {
+  height: 46px !important;
+}

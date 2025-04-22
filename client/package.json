@@ -1,0 +1,37 @@
+{
+    "name": "client",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@ant-design/icons": "^5.5.2",
+        "@ant-design/icons-vue": "^7.0.1",
+        "@hookform/resolvers": "^3.9.1",
+        "ant-design-vue": "^4.2.6",
+        "antd": "^5.23.0",
+        "axios": "^1.7.9",
+        "esbuild": "^0.25.0",
+        "pinia": "^2.2.6",
+        "react-sweetalert2": "^0.6.0",
+        "sweetalert2": "^11.15.10",
+        "vee-validate": "^4.15.0",
+        "vue": "^3.5.13",
+        "vue-router": "^4.4.5",
+        "vue3-toastify": "^0.2.8",
+        "vuex": "^4.0.2",
+        "zod": "^3.24.1"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^5.2.1",
+        "autoprefixer": "^10.4.20",
+        "postcss": "^8.4.49",
+        "postcss-cli": "^11.0.0",
+        "tailwindcss": "^3.4.17",
+        "vite": "^6.0.1"
+    }
+}
