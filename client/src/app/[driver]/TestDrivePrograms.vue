@@ -47,7 +47,7 @@
           type="text"
           placeholder="Nhập hãng xe" />
       </div> -->
-<!-- 
+      <!-- 
       <div class="search-item">
         <label for="vehicleType">Dòng Xe:</label>
         <input
