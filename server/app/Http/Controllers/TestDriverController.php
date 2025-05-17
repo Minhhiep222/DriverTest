@@ -360,7 +360,12 @@ class TestDriverController extends Controller
         }
     }
 
-
+    /**
+     * Handle confirm the driver test
+     * @param \Illuminate\Http\Request $request
+     * @param mixed $id
+     * @return mixed|\Illuminate\Http\JsonResponse
+     */
     public function confirm(Request $request, $id)
     {
         try {
