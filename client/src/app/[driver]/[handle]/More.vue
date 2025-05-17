@@ -58,7 +58,6 @@
       console.error('error', error);
     }
   };
-
   onMounted(() => {
     handleGetDriver();
   });

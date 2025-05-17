@@ -1,54 +1,4 @@
 <template>
-  <!-- <div class="test-drive-details-user bg-customBlack">
-    <div class="product-card">
-      <div
-        class="product-image-container"
-        style="background-size: cover"
-        :style="{
-          backgroundImage: `url(${image + detail?.images[0]?.path})`,
-        }"></div>
-
-      <div class="product-info">
-        <div class="p-3">
-          <h2 class="product-title">{{ detail?.name }}</h2>
-          <div class="info-row">
-            <span class="label">Hãng:</span>
-            <span class="value">{{ detail?.showroom }}</span>
-          </div>
-          <div class="info-row">
-            <span class="label">Bắt đầu:</span>
-            <span class="value">{{ detail?.start_time }}</span>
-          </div>
-          <div class="info-row">
-            <span class="label">Kết thúc:</span>
-            <span class="value">{{ detail?.end_time }}</span>
-          </div>
-          <div class="info-row">
-            <span class="label">Loại xe:</span>
-            <span class="value">{{ detail?.vehicle_type }}</span>
-          </div>
-          <div class="description-container">
-            <span class="label">Mô tả:</span>
-            <p class="description-text">{{ detail?.description }}</p>
-          </div>
-          <div class="info-row status-row">
-            <span class="label">Trạng thái:</span>
-            <span :class="{status: true, active: detail?.status === 'Active'}">
-              {{ detail?.status === 'Inactive' ? 'Kết thúc' : 'Đang diễn ra' }}
-            </span>
-          </div>
-          <div class="button-container">
-            <button
-              class="register-button"
-              @click="() => handleBooking(detail.id)">
-              Tham gia chương trình
-            </button>
-            <button class="back-button" @click="handleBack">Quay lại</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <div class="bg-customBlack px-5 md:px-20 pt-12 pb-20 text-white">
     <div class="flex flex-col relative">
       <div class="mb-10 md:absolute top-0 z-10 right-0 flex gap-2">
@@ -62,7 +12,9 @@
           class="cursor-pointer hover:brightness-75" />
       </div>
       <h1 class="text-3xl font-semibold relative">{{ detail?.name }}</h1>
-      <div class="text-lg font-medium relative flex gap-2 mb-1"> <img src="@root/public/car.svg" alt="" /> {{ detail?.showroom }}</div>
+      <div class="text-lg font-medium relative flex gap-2 mb-1">
+        <img src="@root/public/car.svg" alt="" /> {{ detail?.showroom }}
+      </div>
       <div class="opacity-90">
         <!-- <p class="flex items-center capitalize flex-wrap gap-2">
           <img src="@root/public/car.svg" alt="" />
