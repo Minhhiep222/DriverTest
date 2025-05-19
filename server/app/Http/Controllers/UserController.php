@@ -91,6 +91,41 @@ class UserController extends Controller
     }
 
     /**
+     * Handle get the user by id
+     * @param mixed $id
+     * @return mixed|\Illuminate\Http\JsonResponse
+     */
+    public function show($id)
+    {
+        try {
+            $user = $this->userRepository->findById($id);
+
+            if (!$user) {
+                return response()->json([
+                    'success' => false,
+                    'message' => "Không có user trong dữ liệu",
+                ], 404);
+            }
+
+            return response()->json([
+                'success' => true,
+                'message' => "Lấy user thành công",
+                'data' => $user
+            ], 200);
+        } catch (ModelNotFoundException $e) {
+            return response()->json([
+                'success' => false,
+                'message' => "Không tìm thấy user trong hệ thống"
+            ], 404);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => $e->getMessage()
+            ], 404);
+        }
+    }
+
+    /**
      * Handle create a new user
      * @param \App\Http\Requests\UserRequest $request
      * @return mixed|\Illuminate\Http\JsonResponse
