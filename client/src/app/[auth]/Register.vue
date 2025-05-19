@@ -19,7 +19,6 @@
             </span>
           </div>
         </div>
-
         <div class="mb-1 p-3">
           <a-input-password
             v-model:value="userInfo.password"
@@ -32,7 +31,6 @@
             </span>
           </div>
         </div>
-        <!-- Overlay for OTP verification -->
         <a-button
           class="m-3"
           type="primary"
@@ -41,7 +39,6 @@
           :loading="isSubmitting"
           >Đăng ký</a-button
         >
-        <!-- Đăng nhập qua mạng xã hội -->
         <div class="social-login">
           <a href="https://facebook.com" target="_blank" class="social-icon">
             <i class="fab fa-facebook-f">FB</i>
@@ -76,10 +73,8 @@
       </svg>
     </div>
   </div>
-
   <Verify v-model="showOtpModal" :register="userInfo" />
 </template>
-
 <script lang="ts" setup>
   import {ref, watch} from 'vue';
   import authRequestApi from '@/apiRequest/auth';
@@ -106,7 +101,6 @@
     userInfo,
     errors
   );
-
   const onSubmit = async () => {
     isSubmitting.value = true;
     try {
