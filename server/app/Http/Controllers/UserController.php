@@ -211,4 +211,30 @@ class UserController extends Controller
             ], 500);
         }
     }
+
+    /**
+     * Handle delete the user by id
+     * @param mixed $id
+     * @return mixed|\Illuminate\Http\JsonResponse
+     */
+    public function destroy($id)
+    {
+        try {
+            $this->userRepository->delete($id);
+            return response()->json([
+                'success' => true,
+                'message' => 'Xóa thành công!'
+            ]);
+        } catch (ModelNotFoundException) {
+            return response()->json([
+                'success' => false,
+                'message' => "Không tồn tại user trong hệ thống"
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => $e->getMessage()
+            ], 500);
+        }
+    }
 }
