@@ -166,4 +166,49 @@ class UserController extends Controller
             ], 500);
         }
     }
+
+    /**
+     * Handle update the user by id
+     * @param \App\Http\Requests\UserRequest $request
+     * @param mixed $id
+     * @return mixed|\Illuminate\Http\JsonResponse
+     */
+    public function update(UserRequest $request, $id)
+    {
+        try {
+            $file = $request->file('image');
+
+            $path = "images/default.png";
+
+            if ($file && $file->isValid()) {
+                $path = $file->store('images', 'public');
+                // Merge data into request
+            } else {
+                $path = $request['logo'];
+            }
+
+            $request->merge([
+                'logo' => $path
+            ]);
+
+            // Store file
+            $user = $this->userRepository->update($id, $request->all());
+
+            return response()->json([
+                'success' => true,
+                'message' => "Sửa thành công",
+                'data' => $user
+            ], 200);
+        } catch (ModelNotFoundException) {
+            return response()->json([
+                'success' => false,
+                'message' => "Không tồn tại user trong hệ thống"
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => $e->getMessage()
+            ], 500);
+        }
+    }
 }
