@@ -9,6 +9,7 @@ use App\Mail\WelcomeMail;
 use App\Mail\SendOTP;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+
 class MailController extends Controller
 {
     public function sendOtp(array $data)

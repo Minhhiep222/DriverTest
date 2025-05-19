@@ -111,49 +111,6 @@
           </div>
         </div>
         <div>
-          <!-- <div class="form-group">
-            <div class="flex justify-between items-center">
-              <label for="start_time">Thời gian bắt đầu:</label>
-              <div
-                class="underline cursor-pointer items-center flex gap-1 text-blue-600 text-xs"
-                @click="showModal">
-                Tùy chỉnh <SettingOutlined />
-              </div>
-            </div>
-            <a-date-picker
-              type="datetime-local"
-              v-model="newProgram.start_time"
-              @change="onDateChangeStarttime"
-              class="w-full border border-gray-300 p-2 rounded h-[45.6px]"
-              :class="{'border-red-500': errors.start_time}" />
-
-            <div class="h-5">
-              <span v-if="errors.start_time" class="text-red-500 text-sm">{{
-                errors.start_time
-              }}</span>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="flex justify-between items-center">
-              <label for="end_time">Thời gian kết thúc:</label>
-              <div
-                class="underline cursor-pointer items-center flex gap-1 text-blue-600 text-xs"
-                @click="showModal">
-                Tùy chỉnh <SettingOutlined />
-              </div>
-            </div>
-            <a-date-picker
-              type="datetime-local"
-              v-model="newProgram.end_time"
-              @change="onDateChangeEndtime"
-              class="w-full border border-gray-300 p-2 rounded h-[45.6px]"
-              :class="{'border-red-500': errors.end_time}" />
-            <div class="h-5">
-              <span v-if="errors.end_time" class="text-red-500 text-sm">{{
-                errors.end_time
-              }}</span>
-            </div>
-          </div> -->
           <div class="form-group">
             <div class="flex justify-between items-center">
               <label for="showroom">Hãng xe:</label>
@@ -613,14 +570,10 @@
 
       notifySuccess(result.payload.message);
       // Reset form
-
       reset();
-
       handleReset();
-
       // Close modal/dialog
       emit('update:modelValue', false);
-
       // Emit success event để parent refresh data
       emit('success');
     } catch (error) {
