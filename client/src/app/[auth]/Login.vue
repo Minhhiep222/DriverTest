@@ -4,7 +4,6 @@
       <h2 class="login-title">Đăng Nhập</h2>
       <img src="@/img/baner-1.png" alt="Baner" width="1400" />
     </div>
-
     <div class="login-form-container">
       <form @submit.prevent="login">
         <div class="form-group">
@@ -20,7 +19,6 @@
               </span>
             </div>
           </div>
-
           <div class="mb-1 p-3">
             <a-input-password
               v-model:value="userInfo.password"
@@ -32,7 +30,6 @@
               </span>
             </div>
           </div>
-
           <a-button
             class="m-3"
             type="primary"
@@ -60,7 +57,6 @@
             <h2>Quên Mật Khẩu</h2>
             <p>Nhập Email của bạn để nhận liên kết đặt lại mật khẩu.</p>
           </div>
-
           <div class="forgot-password-form">
             <form @submit.prevent="handleForgotPassword">
               <div class="form-group">
@@ -91,7 +87,6 @@
               </div>
             </form>
           </div>
-
           <div class="forgot-password-footer">
             <a @click="showForgotPassword = false">Hủy</a>
           </div>
@@ -101,7 +96,6 @@
             <h2>Xác nhận</h2>
             <p>Nhập mã OTP vừa được gửi qua.</p>
           </div>
-
           <div class="forgot-password-form">
             <form @submit.prevent="onSubmitVerifyOtp">
               <div class="form-group">
@@ -130,7 +124,6 @@
               >
             </form>
           </div>
-
           <div class="forgot-password-footer">
             <a @click="showForgotPassword = false">Hủy</a>
           </div>
@@ -290,18 +283,6 @@
 </script>
 
 <style>
-  /* Base styles */
-  /* body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-} */
-
-  /* Common styles for inputs, buttons etc */
   .form-group {
     display: flex;
     flex-direction: column;
@@ -320,7 +301,6 @@
   .form-group input:focus {
     border-color: #6dc1ff;
   }
-
   .submit-btn {
     display: block;
     width: 100%;
