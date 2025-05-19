@@ -52,13 +52,10 @@ class AuthController extends Controller
                 'phone' => 'required|string',
                 'password' => 'required|string|min:6',
             ]);
-
             // Tìm account với số điện thoại
             $account = Account::where('phone', $request->phone)
                 ->where('status', 'Active')
                 ->first();
-
-
             if (!$account) {
                 return response()->json([
                     'status' => 'error',
@@ -70,7 +67,6 @@ class AuthController extends Controller
                     ]
                 ], 422);
             }
-
             // Kiểm tra credentials
             if (!Auth::guard('api')->attempt($request->only('phone', 'password'))) {
                 return response()->json([
@@ -83,7 +79,6 @@ class AuthController extends Controller
                     ]
                 ], 422);
             }
-
             // Tạo JWT token
             $token = JWTAuth::fromUser($account);
 
@@ -94,7 +89,6 @@ class AuthController extends Controller
             } else {
                 $details = Admin::where('account_id', $account->id)->first();
             }
-
 
             // Chuẩn bị dữ liệu response
             $responseData = [
@@ -185,7 +179,6 @@ class AuthController extends Controller
         }
     }
 
-
     /**
      * Update user information
      *
@@ -263,9 +256,7 @@ class AuthController extends Controller
                     ], 422);
                 }
             }
-
             $me->update($request->all());
-
             $data = [
                 'name' => $me->fullname
             ];
@@ -294,8 +285,6 @@ class AuthController extends Controller
             ], 500);
         }
     }
-
-
 
     /**
      * Logout user (Invalidate the token)
