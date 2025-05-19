@@ -1,6 +1,5 @@
 import http from '@/lib/http'
 import { ColorResType } from '../schemaValidations/color'
-
 export default {
   getAll: () => http.get<ColorResType>('/colors'),
   getUserColor: () => http.get<ColorResType>('user/colors'),

@@ -14,9 +14,7 @@ import {
 } from "@/schemaValidations/auth.schema";
 import envConfig from "@/config";
 import http from "@/lib/http";
-
 const endpoint = envConfig.VUE_APP_API_ENDPOINT;
-
 const authRequestApi = {
     register: (body: RegisterBodyType) => http.post<RegisterResType>(`/auth/register`, body),
     verify: (body: VerifyBodyResType) => http.post<LoginResType>(`/auth/register/verify`, body),
@@ -30,5 +28,4 @@ const authRequestApi = {
     logout: (body: RegisterBodyType) => axios.post<RegisterBodyType>(`${endpoint}/api/auth/register`, body),
     refesh: (body: RegisterBodyType) => axios.post<RegisterBodyType>(`${endpoint}/api/auth/register`, body),
 }
-
 export default authRequestApi;
