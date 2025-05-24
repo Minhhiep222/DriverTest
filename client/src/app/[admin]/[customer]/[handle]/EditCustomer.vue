@@ -289,16 +289,13 @@
       const result = await customerRequestApi.update(customerInfo.value);
 
       notifySuccess(result.payload.message);
-      // Reset form
-
+    //reset
       reset();
 
       images.value = null;
-
-      // Đóng modal/dialog
+      //đống model
       emit('update:modelValue', false);
 
-      // Emit sự kiện thành công để refresh dữ liệu ở parent
       emit('success');
     } catch (error) {
       handleErrorApi({
@@ -307,7 +304,8 @@
       });
       notifyError('Có lỗi xảy ra vui lòng kiểm tra lại dữ liệu');
     } finally {
-      isSubmitting.value = false; // Dừng loading
+      isSubmitting.value = false; 
+      //dừng load
     }
   };
 
